@@ -1,0 +1,14 @@
+﻿<Window x:Class="Frontend.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Price Simulator" Height="450" Width="800">
+    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Length of simulation: " VerticalAlignment="Center" Margin="5"/>
+            <TextBox Text="{Binding InputValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="50" Margin="5"/>
+        </StackPanel>
+        <Button Content="Start High Frequency Simulation" Click="StartHighFrequency_Click" Margin="5"/>
+        <Button Content="Start Low Frequency Simulation" Click="StartLowFrequency_Click" Margin="5"/>
+        <Button Content="Start Burst Frequency Simulation" Click="StartBurstFrequency_Click" Margin="5"/>
+    </StackPanel>
+</Window>

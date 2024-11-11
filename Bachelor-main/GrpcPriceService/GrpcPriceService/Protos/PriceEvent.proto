@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcPriceService.Protos";
+
+import "google/protobuf/empty.proto";
+
+package priceEvent;
+
+
+service PriceStream{
+
+	rpc PricesStream (google.protobuf.Empty) returns (stream gRPCPriceEvent);
+
+	rpc PublishPrice(gRPCPriceEvent) returns (google.protobuf.Empty);
+}
+
+
+message gRPCPriceEvent{
+
+	double TradePrice = 1;
+
+	double TradeVolume = 2;
+
+	int64 TradeDate = 3;
+
+	double AccumulatedVolume = 4;
+
+	double HighPrice = 5;
+
+	double LowPrice = 6;
+
+	int32 NumberOfTrades = 7;
+
+	string PriceId = 8;
+
+	string EventId = 9;
+
+}
